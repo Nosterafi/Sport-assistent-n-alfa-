@@ -10,9 +10,14 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, содержащий информацию о задолженностях клиентов.
+    /// <summary>
+    /// UserControl, содержащий информацию о задолженностях клиентов.
+    /// </summary>
     public partial class Debts : UserControl
     {
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Debts()
         {
             InitializeComponent();

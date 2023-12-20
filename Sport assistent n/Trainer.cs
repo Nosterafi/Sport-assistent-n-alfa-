@@ -22,7 +22,7 @@ namespace Sport_assistent_n
         //Массив, который хранит ссылки на UserControl-ы - разделы 
         //тренера. Он необходим для использования метода VisualEffects.HideControls.
         private UserControl[] DataControls { get; set; }
-        private DataTable userdata;//таблица для загрузки данных из DB
+        private DataTable userdata;//таблица для загрузки данных из БД
         private QueriesSQL querySQL;
 
         //Конструктор.

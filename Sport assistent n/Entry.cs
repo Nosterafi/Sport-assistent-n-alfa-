@@ -7,46 +7,32 @@ using System.Drawing;
 
 namespace Sport_assistent_n
 {
-    //UserControl, через который происходят вход в систему и переход к разделу регистрации.
+    /// <summary>
+    /// UserControl, через который происходят вход в систему и переход к разделу регистрации
+    /// </summary>
     public partial class Entry : UserControl
     {
+        /// <summary>
+        /// Поле-коннектор. Через него происходит взаимодействие с БД
+        /// </summary>
         private QueriesSQL SQL;
-        //private MySqlConnection connector;
-        //Конструктор.
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Entry()
         {
             InitializeComponent();
             SQL = new QueriesSQL(ConfigurationManager.ConnectionStrings["ProfileStart"].ConnectionString);
         }
+
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки entryButton. Проверяет введённые данные и
+        /// в случае верного ввода открывает одно из окон пользователей. В противном случае
+        /// метод выводит сообщение об ошибке
+        /// </summary>
         private void entryButton_Click(object sender, EventArgs e)
         {
-            //if (loginTextBox.Text == "Nosterafi" && passwordTextBox.Text == "0000")
-            //    VisualEffects.ControlsChange(this, new Admin(), new Point(0, 0));      
-            /*
-            try
-            {
-                connector = new MySqlConnection(ConfigurationManager.ConnectionStrings["ProfileStart"].ConnectionString);
-                connector.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка подключения к базам данных: {ex.Message}\nПовторите попытку позже!");
-                return;
-            }
-            string login = loginTextBox.Text;
-            string password = passwordTextBox.Text;
-            DataTable dataTable = new DataTable();
-            MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `startingdatabase` WHERE `login`=@ul AND `password`=@up", connector);
-            command.Parameters.Add("@ul", MySqlDbType.VarChar).Value = login;
-            command.Parameters.Add("@up", MySqlDbType.VarChar).Value = password;
-            sqlDataAdapter.SelectCommand = command;
-            sqlDataAdapter.Fill(dataTable);
-            connector.Close();
-            */
-            //var d = dataTable;
-            //var s = dataTable.Rows[0]["role"];
-            //QueriesSQL SQL = new QueriesSQL(ConfigurationManager.ConnectionStrings["ProfileStart"].ConnectionString);
             DataTable dataTable = new DataTable();
             MySqlCommand command = new MySqlCommand("SELECT * FROM `startingdatabase` WHERE `login`=@ul AND `password`=@up");
             command.Parameters.Add("@ul", MySqlDbType.VarChar).Value = loginTextBox.Text;
@@ -82,8 +68,10 @@ namespace Sport_assistent_n
             else MessageBox.Show("Профиль не найден!");
         }
 
-        //Все методы с именами, заканчивающимися на Click, отвечают
-        //за действия, выполняемые при нажатии соответствующей кнопки.
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки entryButton и открывающий
+        /// окно операции клиента
+        /// </summary>
         private void registrationButton_Click(object sender, EventArgs e)
         {
             VisualEffects.ControlsChange(this, new Registration());

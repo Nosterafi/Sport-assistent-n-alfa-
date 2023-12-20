@@ -10,10 +10,15 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //Кнопка, при нажатии на которую происходит переход в раздел входа систему.
+    /// <summary>
+    /// Кнопка, при нажатии на которую происходит переход в раздел входа систему.
+    /// Наследует UserControl
+    /// </summary>
     public partial class ExitButton : UserControl
     {
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public ExitButton()
         {
             InitializeComponent();
@@ -21,6 +26,11 @@ namespace Sport_assistent_n
 
         //Все методы с именами, заканчивающимися на Click, отвечают
         //за действия, выполняемые при нажатии соответствующей кнопки.
+
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки и 
+        /// возвращающий пользователя на окно входа
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             VisualEffects.Clear();

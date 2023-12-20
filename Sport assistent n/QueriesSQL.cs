@@ -12,7 +12,7 @@ namespace Sport_assistent_n
         private bool kf;//керри-флаг, предназначенный для проверки состояния (открыто/закрыто) connector
 
         //для просмотра и возвращения данных из таблицы
-        //применять, если в качестве операции для передаци команды в DB вы использовали команду SELECT
+        //применять, если в качестве операции для передаци команды в БД вы использовали команду SELECT
         public Exception SelectDB(MySqlCommand command, out DataTable table)
         {
             //if(!kfConnect) OpenConnect();
@@ -32,7 +32,7 @@ namespace Sport_assistent_n
             catch (Exception ex){ if (kf) { connector.Close();kf = false; } table=null; return ex; }
         }
         //для удаления, обновления и добавления в таблицу данных
-        //применять, если в качестве операции для передаци команды в DB вы использовали команду INSERT, UPDATE и/или DELETE
+        //применять, если в качестве операции для передаци команды в БД вы использовали команду INSERT, UPDATE и/или DELETE
         public Exception UpdateInsertDeletDB(MySqlCommand command)
         {
             //if (!kfConnect) OpenConnect();

@@ -4,6 +4,17 @@
         <name>Sport assistent n</name>
     </assembly>
     <members>
+        <member name="T:Sport_assistent_n.Acces">
+            <summary>
+            UserControl, содержащий в себе информацию об уровне доступа клиентов.
+            Наследует класс UserControl
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Acces.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.Acces.components">
             <summary> 
             Обязательная переменная конструктора.
@@ -19,6 +30,68 @@
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.Accountant">
+            <summary>
+            UserControl, содержащий всю информацию и весь функционал, необходимые бухгалтеру.
+            Наследует User
+            </summary>
+        </member>
+        <member name="P:Sport_assistent_n.Accountant.DataControls">
+            <summary>
+            Поле-массив, которое хранит ссылки на UserControl-ы - разделы бухгалтера.
+            Он необходим для использования метода VisualEffects.HideControls.
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Accountant.userdata">
+            <summary>
+            Таблица для загрузки данных из БД
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Accountant.querySQL">
+            <summary>
+            Поле-коннектор. Через него происходит взаимодействие с БД
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Accountant.#ctor(System.Data.DataTable)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="table">Таблица с данными бухгалтера</param>
+        </member>
+        <member name="M:Sport_assistent_n.Accountant.DataPreparation">
+            <summary>
+            Метод, предназначенный для загрузки данных о пользователе
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Accountant.profilButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки profileButton и открывающий профиль бухгалтера
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Accountant.salesButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки salesButton и открывающий
+            раздел учёта продаж абонементов
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Accountant.gainButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки gainButton и открывающий
+            раздел расчёта доходов
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Accountant.debtsButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки gainButton и открывающий
+            раздел контроля задолженностей клиентов
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Accountant.reportButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки reportButton и открывающий
+            раздел генерации отчётов о финансовых показателях
             </summary>
         </member>
         <member name="F:Sport_assistent_n.Accountant.components">
@@ -38,6 +111,57 @@
             содержимое этого метода с помощью редактора кода.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.Admin">
+            <summary>
+            UserControl, содержащий в себе весь функционал и всю информацию, необходимые для работы администратора.
+            Наследует User
+            </summary>
+        </member>
+        <member name="P:Sport_assistent_n.Admin.DataControls">
+            <summary>
+            Поле-массив, которое хранит ссылки на UserControl-ы - разделы 
+            администратора. Он необходим для использования метода VisualEffects.HideControls.
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Admin.userdata">
+            <summary>
+            Таблица для загрузки данных из БД
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Admin.querySQL">
+            <summary>
+            Поле-коннектор. Используется для взаимодействия с БД
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Admin.#ctor(System.Data.DataTable)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="table"></param>
+        </member>
+        <member name="M:Sport_assistent_n.Admin.DataPreparation">
+            <summary>
+            Метод, предназначенный для загрузки данных о пользователе
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Admin.profilButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки profileButton и открывающий
+            профиль администратора
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Admin.accesButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки accesButton и открывающий
+            раздел контроля доступа клиентов
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Admin.notificationButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки notificationButton и открывающий
+            раздел уведомлений
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.Admin.components">
             <summary>
             Обязательная переменная конструктора.
@@ -53,6 +177,63 @@
             <summary>
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.AdminSC">
+            <summary>
+            UserControl, содержащий в себе весь функционал и всю информацию,
+            необходимые для работы администратора спорткомплекса.
+            </summary>
+        </member>
+        <member name="P:Sport_assistent_n.AdminSC.DataControl">
+            <summary>
+            Поле-массив, которое хранит ссылки на UserControl-ы - разделы 
+            администратора спорткомплекса. Он необходим для использования метода VisualEffects.HideControls.
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.AdminSC.userdata">
+            <summary>
+            Таблица для загрузки данных из БД
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.AdminSC.querySQL">
+            <summary>
+            Поле-коннектор. Через него происходит взаимодействие с БД
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.AdminSC.#ctor(System.Data.DataTable)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="table"></param>
+        </member>
+        <member name="M:Sport_assistent_n.AdminSC.DataPreparation">
+            <summary>
+            Метод, предназначенный для загрузки данных о пользователи
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.AdminSC.profilButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки profileButton и открывающий
+            профиль администратора спорткомплекса
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.AdminSC.managerButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки managerButton и открывающий
+            раздел управления клиентскими данными
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.AdminSC.distributionButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки distributionButton и открывающий
+            раздел распределения тренеров
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.AdminSC.monitoringButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки monitoringButton и открывающий
+            раздел мониторинга
             </summary>
         </member>
         <member name="F:Sport_assistent_n.AdminSC.components">
@@ -247,6 +428,23 @@
             Главная точка входа для приложения.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.Begin">
+            <summary>
+            UserControl, который показывается в самом
+            начале и содержит кнопку перехода к окну для входа в систему.
+            Наследует UserControl
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Begin.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Begin.beginButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки beginButton и открывающий окно входа
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.Begin.components">
             <summary> 
             Обязательная переменная конструктора.
@@ -398,6 +596,51 @@
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.Client">
+            <summary>
+            UserControl, содержащий в себе весь функционал и всю информацию,
+            необходимые для работы клиента спорткомплекса.
+            </summary>
+        </member>
+        <member name="P:Sport_assistent_n.Client.DataControls">
+            <summary>
+            Поле-массив, которое хранит ссылки на UserControl-ы - разделы 
+            клиента. Он необходим для использования метода VisualEffects.HideControls.
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Client.userdata">
+            <summary>
+            Таблица для загрузки данных из БД
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Client.querySQL">
+            <summary>
+            Поле-коннектор. Через него происходит взаимодействие с БД
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Client.#ctor(System.Data.DataTable)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="table"></param>
+        </member>
+        <member name="M:Sport_assistent_n.Client.DataPreparation">
+            <summary>
+            Метод, предназначенный для загрузки данных о пользователи
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Client.profilButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки profileButton и открывающий
+            профиль клиента
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Client.subscriptionButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки  и открывающий
+            раздел учёта продаж абонементов
             </summary>
         </member>
         <member name="F:Sport_assistent_n.Client.components">

@@ -10,13 +10,28 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, содержащий в себе информацию об уровне доступа клиентов.
+    /// <summary>
+    /// UserControl, содержащий в себе информацию об уровне доступа клиентов.
+    /// Наследует класс UserControl
+    /// </summary>
     public partial class Acces : UserControl
     {
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Acces()
         {
             InitializeComponent();
+        }
+
+        private void Acces_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

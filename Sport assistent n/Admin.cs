@@ -10,21 +10,37 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, содержащий в себе весь функционал и всю информацию, необходимые для работы администратора.
-    public partial class Admin : Sport_assistent_n.User
+    /// <summary>
+    /// UserControl, содержащий в себе весь функционал и всю информацию, необходимые для работы администратора.
+    /// Наследует User
+    /// </summary>
+    public partial class Admin : User
     {
         //Использующиеся UserControls:
         //Profile
         //Acces
         //Notifications
 
-        //Массив, который хранит ссылки на UserControl-ы - разделы 
-        //администратора. Он необходим для использования метода VisualEffects.HideControls.
+        /// <summary>
+        /// Поле-массив, которое хранит ссылки на UserControl-ы - разделы 
+        /// администратора. Он необходим для использования метода VisualEffects.HideControls.
+        /// </summary>
         private UserControl[] DataControls { get; set; }
-        private DataTable userdata;//таблица для загрузки данных из DB
+
+        /// <summary>
+        /// Таблица для загрузки данных из БД
+        /// </summary>
+        private DataTable userdata;
+
+        /// <summary>
+        /// Поле-коннектор. Используется для взаимодействия с БД
+        /// </summary>
         private QueriesSQL querySQL;
 
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="table"></param>
         public Admin(DataTable table)
         {
             InitializeComponent();
@@ -39,7 +55,10 @@ namespace Sport_assistent_n
             VisualEffects.HideControls(DataControls);
             acces1.Show();
         }
-        //Метод, предназначенный для загрузки данных о пользователи
+
+        /// <summary>
+        /// Метод, предназначенный для загрузки данных о пользователе
+        /// </summary>
         private void DataPreparation()
         {
             querySQL = new QueriesSQL(ConfigurationManager.ConnectionStrings["ProfileRoot"].ConnectionString);
@@ -57,18 +76,31 @@ namespace Sport_assistent_n
 
         //Все методы с именами, заканчивающимися на Click, отвечают
         //за действия, выполняемые при нажатии соответствующей кнопки.
+
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки profileButton и открывающий
+        /// профиль администратора
+        /// </summary>
         private void profilButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);
             profile1.Show();
         }
 
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки accesButton и открывающий
+        /// раздел контроля доступа клиентов
+        /// </summary>
         private void accesButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);
             acces1.Show();
         }
 
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки notificationButton и открывающий
+        /// раздел уведомлений
+        /// </summary>
         private void notificationButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);
