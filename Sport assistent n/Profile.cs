@@ -11,10 +11,14 @@ using System.Windows.Forms.VisualStyles;
 
 namespace Sport_assistent_n
 {
-    //UserControl, предоставляющий информацию о данных профиля пользователя.
+    /// <summary>
+    /// UserControl, предоставляющий данные профиля пользователя
+    /// </summary>
     public partial class Profile : UserControl
     {
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Profile()
         {
             InitializeComponent();
@@ -22,11 +26,18 @@ namespace Sport_assistent_n
 
         //Все методы с именами, заканчивающимися на Click, отвечают
         //за действия, выполняемые при нажатии соответствующей кнопки.
+
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки hideLogin. Скрывает логин пользователя
+        /// </summary>
         private void hideLogin_Click(object sender, EventArgs e)
         {
             userLogin.UseSystemPasswordChar = !userLogin.UseSystemPasswordChar;
         }
 
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки hidepassword. Скрывает пароль пользователя
+        /// </summary>
         private void hidePassword_Click(object sender, EventArgs e)
         {
             userPassword.UseSystemPasswordChar = !userPassword.UseSystemPasswordChar;

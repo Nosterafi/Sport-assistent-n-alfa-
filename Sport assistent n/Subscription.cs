@@ -10,18 +10,33 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, который позволяет просматривать информацию о имеющихся абонементах
-    //конкретного клиента и приобретать новые.
+    /// <summary>
+    /// UserControl, который позволяет просматривать информацию о имеющихся абонементах
+    /// </summary>
     public partial class Subscription : UserControl
     {
+        /// <summary>
+        /// Таблица с данными об абонементах
+        /// </summary>
         public DataTable abonements;
+
+        /// <summary>
+        /// Таблица с данными о секциях
+        /// </summary>
         public DataTable section;
-        //Конструктор.
+        
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Subscription()
         {
             InitializeComponent();
             ExLoad();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public void ExLoad()
         {
             dataGridView1.DataSource = abonements;

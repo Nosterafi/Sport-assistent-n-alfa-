@@ -4,6 +4,9 @@ using System.Data;
 
 namespace Sport_assistent_n
 {
+    /// <summary>
+    /// Класс, предоставляющий методы для взаимодействия с БД
+    /// </summary>
     public class QueriesSQL
     {
         private MySqlConnection connector;

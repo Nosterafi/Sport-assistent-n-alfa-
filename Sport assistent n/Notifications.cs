@@ -10,10 +10,14 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, позволяющий просматривать уведомления.
+    /// <summary>
+    /// UserControl, позволяющий просматривать уведомления
+    /// </summary>
     public partial class Notifications : UserControl
     {
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Notifications()
         {
             InitializeComponent();

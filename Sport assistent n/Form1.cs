@@ -10,10 +10,14 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //Форма, внутри которой происходят все действия программы.
+    /// <summary>
+    /// Форма, внутри которой происходят вся работа
+    /// </summary>
     public partial class MainForm : Form
     {
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
