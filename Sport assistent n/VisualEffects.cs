@@ -8,11 +8,28 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //Этот класс отвечает за смену UserControl-ов в приложении
+    /// <summary>
+    /// Статичексий класс VisualEffects отвечает за смену UserControl-ов в приложении
+    /// </summary>
     public static class VisualEffects
     {
-        //Форма, в которой происходят все действия
+        /// <summary>
+        /// Форма, в которой происходит вся работа
+        /// </summary>
         private static MainForm actualForm;
+
+        /// <summary>
+        /// Свойство, контролирующее поле actualForm
+        /// </summary>
+        /// <param name="value">
+        /// Новая форма, с которой будет работать приложение
+        /// </param>
+        /// <returns> 
+        /// Текущая рабочая форма
+        /// </returns>
+        /// <exception cref="InvalidOperationException">
+        /// Выдаётся при попытке повторного присвоения значения
+        /// </exception>
         public static MainForm ActualForm
         {
             get { return actualForm; }
@@ -22,7 +39,16 @@ namespace Sport_assistent_n
                 actualForm = value;
             }
         }
-        //void ControlsChange(UserControl oldControl, UserControl newControl) ставит на место oldControl новый элемент newControl
+        
+        /// <summary>
+        /// Ставит один UserControl на место другого
+        /// </summary>
+        /// <param name="oldControl">UserControl, который нужно заменить</param>
+        /// <param name="newControl">Новый UserControl</param>
+        /// <exception cref="NullReferenceException">Выдаётся при попытке передать в метод null</exception>
+        /// <exception cref="ArgumentException">
+        /// Выдаётся, если указанного в качестве oldControla UserControl-а нет на рабочей форме в момент вызова
+        /// </exception>
         public static void ControlsChange(UserControl oldControl, UserControl newControl)
         {
             if (oldControl == null || newControl == null)
@@ -38,7 +64,17 @@ namespace Sport_assistent_n
             catch { throw new ArgumentException("oldControl не найден"); }
             newControl.Anchor = AnchorStyles.None;
         }
-        //Перегрузка метода, находящегося над этим комментарием. Убирает oldControl и ставит newControl на координатах newLocation
+
+        /// <summary>
+        /// Ставит новый UserControl в указанную точку, убирая при этом старый
+        /// </summary>
+        /// <param name="oldControl">UserControl, который нужно заменить</param>
+        /// <param name="newControl">Новый UserControl</param>
+        /// <param name="newLocation">Точка, в которую нужно поставить новый UserControl</param>
+        /// <exception cref="NullReferenceException">Выдаётся при попытке передать в метод null</exception>
+        /// <exception cref="ArgumentException">
+        /// Выдаётся, если указанного в качестве oldControla UserControl-а нет на рабочей форме в момент вызова
+        /// </exception>
         public static void ControlsChange(UserControl oldControl, UserControl newControl, Point newLocation)
         {
             if (oldControl == null || newControl == null)
@@ -53,17 +89,22 @@ namespace Sport_assistent_n
             catch { throw new ArgumentException("oldControl не найден"); }
             newControl.Anchor=AnchorStyles.None;
         }
-        //HideControls скрывает все элементы массива userControls
+
+        /// <summary>
+        /// Скрывает UserControl-ы, переданные в виде массива
+        /// </summary>
+        /// <param name="userControls">Массив с UserControl-ами, которые нужно скрыть</param>
         public static void HideControls(UserControl[] userControls)
         {
             foreach(var contr in userControls)
             {
                 contr.Hide();
-                //((Form)contr.TopLevelControl).Close();
             }
         }
 
-        //Clear удаляет все элементы с текущей формы
+        /// <summary>
+        /// Удаляет все Control-ы с рабочей формы
+        /// </summary>
         public static void Clear() { ActualForm.Controls.Clear(); } 
     }
 }
