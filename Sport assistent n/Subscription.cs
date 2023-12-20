@@ -10,23 +10,41 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, который позволяет просматривать информацию о имеющихся абонементах
-    //конкретного клиента и приобретать новые.
+    /// <summary>
+    /// UserControl, который позволяет просматривать информацию о имеющихся абонементах
+    /// </summary>
     public partial class Subscription : UserControl
     {
+        /// <summary>
+        /// Таблица с данными об абонементах
+        /// </summary>
         public DataTable abonements;
+
+        /// <summary>
+        /// Таблица с данными о секциях
+        /// </summary>
         public DataTable section;
-        //Конструктор.
+        
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Subscription()
         {
             InitializeComponent();
-            ExLoad();
         }
+
+        /// <summary>
+        /// Подготавливает таблицу dataGridView1 к отображению данных.
+        /// </summary>
         public void ExLoad()
         {
             dataGridView1.DataSource = abonements;
             dataGridView1.CellFormatting += DataGridViewSubscriptions_CellFormatting;
         }
+
+        /// <summary>
+        /// Обновляет данные в таблице абонементов
+        /// </summary>
         private void DataGridViewSubscriptions_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["Sections"].Index)
@@ -47,6 +65,11 @@ namespace Sport_assistent_n
 
         //Все методы с именами, заканчивающимися на Click, отвечают
         //за действия, выполняемые при нажатии соответствующей кнопки.
+
+        /// <summary>
+        /// Метод, выполняющийся при нажатии кнопки newSubscription. Запускает 
+        /// процесс оформления нового абонемента (пока в процессе разработки)
+        /// </summary>
         private void newSubscription_Click(object sender, EventArgs e)
         {
 

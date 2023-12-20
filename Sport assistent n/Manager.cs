@@ -10,7 +10,9 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, содержащий весь необходимый функционал для управления клиентскими данными.
+    /// <summary>
+    /// UserControl, содержащий весь необходимый функционал для управления клиентскими данными
+    /// </summary>
     public partial class Manager : UserControl
     {
         //Конструктор.
@@ -20,6 +22,11 @@ namespace Sport_assistent_n
         }
 
         private void Manager_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clientData_Click(object sender, EventArgs e)
         {
 
         }

@@ -40,6 +40,7 @@
             this.label1.Size = new System.Drawing.Size(592, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "У вас нет запланированных тренировок";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // TrainerTimetable
             // 

@@ -10,17 +10,27 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, который содержит необходимый функционал для мониторинга и 
-    //анализа текущей ситуации в спорткомплексе.
+
+    /// <summary>
+    /// UserControl, который содержит необходимый функционал для мониторинга и 
+    /// анализа текущей ситуации в спорткомплексе
+    /// </summary>
     public partial class Monitoring : UserControl
     {
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Monitoring()
         {
             InitializeComponent();
         }
 
         private void Monitoring_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void attendance_Click(object sender, EventArgs e)
         {
 
         }

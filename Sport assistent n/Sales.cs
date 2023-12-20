@@ -10,10 +10,14 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, который содержит информацию о продаже абонементов.
+    /// <summary>
+    /// UserControl, который содержит информацию о продаже абонементов
+    /// </summary>
     public partial class Sales : UserControl
     {
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Sales()
         {
             InitializeComponent();

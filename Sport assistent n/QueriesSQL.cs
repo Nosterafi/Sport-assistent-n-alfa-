@@ -4,18 +4,41 @@ using System.Data;
 
 namespace Sport_assistent_n
 {
+    /// <summary>
+    /// Класс, предоставляющий методы для взаимодействия с БД
+    /// </summary>
     public class QueriesSQL
     {
+        /// <summary>
+        /// Поле, через которое происходит подключение к БД
+        /// </summary>
         private MySqlConnection connector;
-        public QueriesSQL(string connectionString) => connector = new MySqlConnection(connectionString);//задаем сервер и профиль
-        public void NewConnectionString(string connectionString) => connector=new MySqlConnection(connectionString);//для перезахода
-        private bool kf;//керри-флаг, предназначенный для проверки состояния (открыто/закрыто) connector
 
-        //для просмотра и возвращения данных из таблицы
-        //применять, если в качестве операции для передаци команды в DB вы использовали команду SELECT
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="connectionString">Данные для входа</param>
+        public QueriesSQL(string connectionString) => connector = new MySqlConnection(connectionString);//задаем сервер и профиль
+
+        /// <summary>
+        /// Выполняет переподключение к БД
+        /// </summary>
+        /// <param name="connectionString">Данные для входа</param>
+        public void NewConnectionString(string connectionString) => connector=new MySqlConnection(connectionString);//для перезахода
+
+        /// <summary>
+        /// Керри-флаг, предназначенный для проверки состояния (открыто/закрыто) connector
+        /// </summary>
+        private bool kf;
+
+        /// <summary>
+        /// Используется для проверки правильности выполнения операции SELECT в составе команды
+        /// </summary>
+        /// <param name="command">Команда, которую нужно выполнить</param>
+        /// <param name="table">Ссылка на таблицу с данными</param>
+        /// <returns>Исключение в случае, когда нельзя выполнить комманду. Иначе - null</returns>
         public Exception SelectDB(MySqlCommand command, out DataTable table)
         {
-            //if(!kfConnect) OpenConnect();
             command.Connection = connector;
             DataTable dataTable = new DataTable();
             MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter();
@@ -31,8 +54,12 @@ namespace Sport_assistent_n
             }
             catch (Exception ex){ if (kf) { connector.Close();kf = false; } table=null; return ex; }
         }
-        //для удаления, обновления и добавления в таблицу данных
-        //применять, если в качестве операции для передаци команды в DB вы использовали команду INSERT, UPDATE и/или DELETE
+        
+        /// <summary>
+        /// Используется для проверки правильности выполнения операциq INSERT, UPDATE и/или DELETE в составе команды
+        /// </summary>
+        /// <param name="command">Команда, которую нужно выполнить</param>
+        /// <returns>Исключение в случае, когда нельзя выполнить комманду. Иначе - null</returns>
         public Exception UpdateInsertDeletDB(MySqlCommand command)
         {
             //if (!kfConnect) OpenConnect();
@@ -47,6 +74,5 @@ namespace Sport_assistent_n
             }
             catch (Exception ex) { if (kf) { connector.Close(); kf = false; } return ex; }
         }
-        //public int ExNumber(int i) => i;
     }
 }

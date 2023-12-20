@@ -10,23 +10,39 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, содержащий всю информацию и весь функционал, необходимые бухгалтеру.
-    public partial class Accountant : Sport_assistent_n.User
+    /// <summary>
+    /// UserControl, содержащий всю информацию и весь функционал, необходимые бухгалтеру.
+    /// Наследует User
+    /// </summary>
+    public partial class Accountant : User
     {
-        //Использующиеся UserControls:
+        //Использующиеся UserControl-ы:
         //Profile
         //Sales
         //Gain
         //Debts
         //Report
 
-        //Массив, который хранит ссылки на UserControl-ы - разделы 
-        //бухгалтера. Он необходим для использования метода VisualEffects.HideControls.
+        /// <summary>
+        /// Поле-массив, которое хранит ссылки на UserControl-ы - разделы бухгалтера.
+        /// Он необходим для использования метода VisualEffects.HideControls.
+        /// </summary>
         private UserControl[] DataControls { get; set; }
-        private DataTable userdata;//таблица для загрузки данных из DB
+
+        /// <summary>
+        /// Таблица для загрузки данных из БД
+        /// </summary>
+        private DataTable userdata;
+
+        /// <summary>
+        /// Поле-коннектор. Через него происходит взаимодействие с БД
+        /// </summary>
         private QueriesSQL querySQL;
 
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="table">Таблица с данными бухгалтера</param>
         public Accountant(DataTable table)
         {
             InitializeComponent();
@@ -43,7 +59,10 @@ namespace Sport_assistent_n
             VisualEffects.HideControls(DataControls);
             sales1.Show();
         }
-        //Метод, предназначенный для загрузки данных о пользователи
+
+        /// <summary>
+        /// Метод, предназначенный для загрузки данных о пользователе
+        /// </summary>
         private void DataPreparation()
         {
             querySQL = new QueriesSQL(ConfigurationManager.ConnectionStrings["ProfileAccountant"].ConnectionString);
@@ -61,30 +80,50 @@ namespace Sport_assistent_n
 
         //Все методы с именами, заканчивающимися на Click, отвечают
         //за действия, выполняемые при нажатии соответствующей кнопки.
+
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки profileButton и открывающий профиль бухгалтера
+        /// </summary>
         private void profilButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);
             profile1.Show();
         }
 
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки salesButton и открывающий
+        /// раздел учёта продаж абонементов
+        /// </summary>
         private void salesButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);
             sales1.Show();
         }
 
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки gainButton и открывающий
+        /// раздел расчёта доходов
+        /// </summary>
         private void gainButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);
             gain1.Show();
         }
 
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки gainButton и открывающий
+        /// раздел контроля задолженностей клиентов
+        /// </summary>
         private void debtsButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);
             debts1.Show();
         }
 
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки reportButton и открывающий
+        /// раздел генерации отчётов о финансовых показателях
+        /// </summary>
         private void reportButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);

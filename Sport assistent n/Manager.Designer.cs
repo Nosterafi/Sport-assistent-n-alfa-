@@ -56,6 +56,7 @@
             this.clientData.Size = new System.Drawing.Size(865, 615);
             this.clientData.TabIndex = 0;
             this.clientData.Text = "База данных клиентов";
+            this.clientData.Click += new System.EventHandler(this.clientData_Click);
             // 
             // queryProcessing
             // 

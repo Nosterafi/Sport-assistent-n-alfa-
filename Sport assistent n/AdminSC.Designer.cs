@@ -191,7 +191,7 @@
             this.monitoringButton.TabIndex = 7;
             this.monitoringButton.Text = "Мониторинг";
             this.monitoringButton.UseVisualStyleBackColor = true;
-            this.monitoringButton.Click += new System.EventHandler(this.monitoring1_Click);
+            this.monitoringButton.Click += new System.EventHandler(this.monitoringButton_Click);
             // 
             // exitButton1
             // 

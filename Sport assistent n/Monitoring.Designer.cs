@@ -56,6 +56,7 @@
             this.attendance.TabIndex = 0;
             this.attendance.Text = "Отчёты о посещаемости";
             this.attendance.UseVisualStyleBackColor = true;
+            this.attendance.Click += new System.EventHandler(this.attendance_Click);
             // 
             // gain
             // 

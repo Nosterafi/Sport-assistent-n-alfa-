@@ -13,10 +13,19 @@ using System.Windows.Forms;
 namespace Sport_assistent_n
 {
     //UserControl, через который происходит регистрация клиентов.
+    /// <summary>
+    /// UserControl, через который происходит регистрация клиентов
+    /// </summary>
     public partial class Registration : UserControl
     {
+        /// <summary>
+        /// Поле-коннектор. Через него происходит взаимодействие с БД
+        /// </summary>
         private QueriesSQL SQL;
-        //Конструктор.
+        
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Registration()
         {
             InitializeComponent();
@@ -25,6 +34,11 @@ namespace Sport_assistent_n
 
         //Все методы с именами, заканчивающимися на Click, отвечают
         //за действия, выполняемые при нажатии соответствующей кнопки.
+
+        /// <summary>
+        /// Метод, запускающийся при нажатии кнопки saveButton и заносящий
+        /// данные о новом клиента в БД.
+        /// </summary>
         private void saveButton_Click(object sender, EventArgs e)
         {
             MySqlCommand command = new MySqlCommand("INSERT INTO clientdatabase (surname, name, patronymic, login, password, cost) VALUES (@Value1, @Value2, @Value3, @Value4, @Value5, @Value6)");
@@ -39,17 +53,7 @@ namespace Sport_assistent_n
             MessageBox.Show("Аккаунт зарегестрирован!\nМожете в него войти!");
             VisualEffects.ControlsChange(this, new Entry(), new Point(0, 0));
         }
-        //Эксперемент
-        //Удачный
-        private void Ex()
-        {
-            MySqlCommand command = new MySqlCommand("UPDATE `clientdatabase` SET `password` = @ul WHERE `clientdatabase`.`id` = @up;");
-            command.Parameters.Add("@ul", MySqlDbType.VarChar).Value = "изменено";
-            command.Parameters.Add("@up", MySqlDbType.Int16).Value = 1;
-            Exception ex = SQL.UpdateInsertDeletDB(command);
-            if (ex != null) { MessageBox.Show($"Exception code: {ex.HResult}\n{ex.Message}"); return; }
-        }
-
+   
         private void Registration_Load(object sender, EventArgs e)
         {
 

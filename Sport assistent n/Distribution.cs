@@ -10,7 +10,9 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, содержащий информацию о распределении третеров в спорткомплексе.
+    /// <summary>
+    /// UserControl, содержащий информацию о распределении тренеров в спорткомплексе.
+    /// </summary>
     public partial class Distribution : UserControl
     {
         public Distribution()

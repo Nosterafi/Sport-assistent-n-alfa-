@@ -10,16 +10,25 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, позволяющий просматривать расписание клиента.
+    /// <summary>
+    /// UserControl, позволяющий просматривать рассписание клиента
+    /// </summary>
     public partial class Timetable : UserControl
     {
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public Timetable()
         {
             InitializeComponent();
         }
 
         private void Timetable_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

@@ -68,6 +68,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(323, 93);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label2
             // 
@@ -108,6 +109,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Acces";
             this.Size = new System.Drawing.Size(914, 698);
+            this.Load += new System.EventHandler(this.Acces_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
