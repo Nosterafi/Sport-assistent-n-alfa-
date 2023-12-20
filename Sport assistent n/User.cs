@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //Исходный UserControl, который наследуется всеми контролами пользователей
-    //(Client, Accountent и т. д.)
+    /// <summary>
+    /// Исходный UserControl, который наследуется всеми контролами пользователей
+    /// Client, Accountent и т.д.)
+    /// </summary>
     public partial class User : UserControl
     {
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public User()
         {
             InitializeComponent();

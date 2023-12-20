@@ -31,17 +31,20 @@ namespace Sport_assistent_n
         public Subscription()
         {
             InitializeComponent();
-            ExLoad();
         }
 
         /// <summary>
-        /// 
+        /// Подготавливает таблицу dataGridView1 к отображению данных.
         /// </summary>
         public void ExLoad()
         {
             dataGridView1.DataSource = abonements;
             dataGridView1.CellFormatting += DataGridViewSubscriptions_CellFormatting;
         }
+
+        /// <summary>
+        /// Обновляет данные в таблице абонементов
+        /// </summary>
         private void DataGridViewSubscriptions_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["Sections"].Index)
@@ -62,6 +65,11 @@ namespace Sport_assistent_n
 
         //Все методы с именами, заканчивающимися на Click, отвечают
         //за действия, выполняемые при нажатии соответствующей кнопки.
+
+        /// <summary>
+        /// Метод, выполняющийся при нажатии кнопки newSubscription. Запускает 
+        /// процесс оформления нового абонемента (пока в процессе разработки)
+        /// </summary>
         private void newSubscription_Click(object sender, EventArgs e)
         {
 

@@ -21,9 +21,9 @@ namespace Sport_assistent_n
         /// <summary>
         /// Свойство, контролирующее поле actualForm
         /// </summary>
-        /// <param name="value">
+        /// <params name="value">
         /// Новая форма, с которой будет работать приложение
-        /// </param>
+        /// </params>
         /// <returns> 
         /// Текущая рабочая форма
         /// </returns>

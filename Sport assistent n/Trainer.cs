@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace Sport_assistent_n
 {
-    //UserControl, содержащий в себе весь функционал и всю информацию,
-    //необходимые для работы тренера.
+
+    /// <summary>
+    /// UserControl, содержащий в себе весь функционал и всю информацию,
+    /// необходимые для работы тренера
+    /// </summary>
     public partial class Trainer : Sport_assistent_n.User
     {
         //Использующиеся UserControls:
@@ -19,13 +22,26 @@ namespace Sport_assistent_n
         //TrainerTimeable
         //Notifications
 
-        //Массив, который хранит ссылки на UserControl-ы - разделы 
-        //тренера. Он необходим для использования метода VisualEffects.HideControls.
+        /// <summary>
+        /// Поле-массив, которое хранит ссылки на UserControl-ы - разделы 
+        /// тренера.Он необходим для использования метода VisualEffects.HideControls.
+        /// </summary>
         private UserControl[] DataControls { get; set; }
-        private DataTable userdata;//таблица для загрузки данных из БД
+
+        /// <summary>
+        /// Таблица для загрузки данных из БД
+        /// </summary>
+        private DataTable userdata;
+
+        /// <summary>
+        /// Поле-коннектор. Через него происходит взаимодействие с БД
+        /// </summary>
         private QueriesSQL querySQL;
 
-        //Конструктор.
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="table"></param>
         public Trainer(DataTable table)
         {
             InitializeComponent();
@@ -40,7 +56,10 @@ namespace Sport_assistent_n
             VisualEffects.HideControls(DataControls);
             trainerTimetable1.Show();
         }
-        //Метод, предназначенный для загрузки данных о пользователи
+        
+        /// <summary>
+        /// Метод, предназначенный для загрузки данных о пользователи
+        /// </summary>
         private void DataPreparation()
         {
             querySQL = new QueriesSQL(ConfigurationManager.ConnectionStrings["ProfileCoach"].ConnectionString);
@@ -58,18 +77,31 @@ namespace Sport_assistent_n
 
         //Все методы с именами, заканчивающимися на Click, отвечают
         //за действия, выполняемые при нажатии соответствующей кнопки.
+
+        /// <summary>
+        /// Метод, вызывающийся при нажатии кнопки profileButton и
+        /// открывающий профиль тренера
+        /// </summary>
         private void profilButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);
             profile1.Show();
         }
 
+        /// <summary>
+        /// Метод, вызывающийся при нажатии кнопки timetableButton и
+        /// открывающий раздел с расписанием тренировок
+        /// </summary>
         private void timetableButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);
             trainerTimetable1.Show();
         }
 
+        /// <summary>
+        /// Метод, вызывающийся при нажатии кнопки notificationButton и
+        /// открывающий раздел с уведомлениями
+        /// </summary>
         private void notificationButton_Click(object sender, EventArgs e)
         {
             VisualEffects.HideControls(DataControls);

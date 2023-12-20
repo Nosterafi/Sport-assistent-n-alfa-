@@ -253,6 +253,58 @@
             содержимое этого метода с помощью редактора кода.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.QueriesSQL">
+            <summary>
+            Класс, предоставляющий методы для взаимодействия с БД
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.QueriesSQL.connector">
+            <summary>
+            Поле, через которое происходит подключение к БД
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.QueriesSQL.#ctor(System.String)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="connectionString">Данные для входа</param>
+        </member>
+        <member name="M:Sport_assistent_n.QueriesSQL.NewConnectionString(System.String)">
+            <summary>
+            Выполняет переподключение к БД
+            </summary>
+            <param name="connectionString">Данные для входа</param>
+        </member>
+        <member name="F:Sport_assistent_n.QueriesSQL.kf">
+            <summary>
+            Керри-флаг, предназначенный для проверки состояния (открыто/закрыто) connector
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.QueriesSQL.SelectDB(MySql.Data.MySqlClient.MySqlCommand,System.Data.DataTable@)">
+            <summary>
+            Используется для проверки правильности выполнения операции SELECT в составе команды
+            </summary>
+            <param name="command">Команда, которую нужно выполнить</param>
+            <param name="table">Ссылка на таблицу с данными</param>
+            <returns>Исключение в случае, когда нельзя выполнить комманду. Иначе - null</returns>
+        </member>
+        <member name="M:Sport_assistent_n.QueriesSQL.UpdateInsertDeletDB(MySql.Data.MySqlClient.MySqlCommand)">
+            <summary>
+            Используется для проверки правильности выполнения операциq INSERT, UPDATE и/или DELETE в составе команды
+            </summary>
+            <param name="command">Команда, которую нужно выполнить</param>
+            <returns>Исключение в случае, когда нельзя выполнить комманду. Иначе - null</returns>
+        </member>
+        <member name="T:Sport_assistent_n.Debts">
+            <summary>
+            UserControl, содержащий информацию о задолженностях клиентов.
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Debts.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.Debts.components">
             <summary> 
             Обязательная переменная конструктора.
@@ -268,6 +320,11 @@
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.Distribution">
+            <summary>
+            UserControl, содержащий информацию о распределении тренеров в спорткомплексе.
             </summary>
         </member>
         <member name="F:Sport_assistent_n.Distribution.components">
@@ -287,6 +344,34 @@
             содержимое этого метода с помощью редактора кода.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.Entry">
+            <summary>
+            UserControl, через который происходят вход в систему и переход к разделу регистрации
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Entry.SQL">
+            <summary>
+            Поле-коннектор. Через него происходит взаимодействие с БД
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Entry.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Entry.entryButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки entryButton. Проверяет введённые данные и
+            в случае верного ввода открывает одно из окон пользователей. В противном случае
+            метод выводит сообщение об ошибке
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Entry.registrationButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки entryButton и открывающий
+            окно операции клиента
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.Entry.components">
             <summary> 
             Обязательная переменная конструктора.
@@ -302,6 +387,23 @@
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.ExitButton">
+            <summary>
+            Кнопка, при нажатии на которую происходит переход в раздел входа систему.
+            Наследует UserControl
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.ExitButton.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.ExitButton.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки и 
+            возвращающий пользователя на окно входа
             </summary>
         </member>
         <member name="F:Sport_assistent_n.ExitButton.components">
@@ -321,6 +423,16 @@
             содержимое этого метода с помощью редактора кода.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.MainForm">
+            <summary>
+            Форма, внутри которой происходят вся работа
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.MainForm.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.MainForm.components">
             <summary>
             Обязательная переменная конструктора.
@@ -336,6 +448,16 @@
             <summary>
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.Gain">
+            <summary>
+            UserControl, содержащий информацию о доходах спорткомплекса
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Gain.#ctor">
+            <summary>
+            Конструктор
             </summary>
         </member>
         <member name="F:Sport_assistent_n.Gain.components">
@@ -355,6 +477,11 @@
             содержимое этого метода с помощью редактора кода.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.Manager">
+            <summary>
+            UserControl, содержащий весь необходимый функционал для управления клиентскими данными
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.Manager.components">
             <summary> 
             Обязательная переменная конструктора.
@@ -370,6 +497,17 @@
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.Monitoring">
+            <summary>
+            UserControl, который содержит необходимый функционал для мониторинга и 
+            анализа текущей ситуации в спорткомплексе
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Monitoring.#ctor">
+            <summary>
+            Конструктор
             </summary>
         </member>
         <member name="F:Sport_assistent_n.Monitoring.components">
@@ -389,6 +527,16 @@
             содержимое этого метода с помощью редактора кода.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.Notifications">
+            <summary>
+            UserControl, позволяющий просматривать уведомления
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Notifications.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.Notifications.components">
             <summary> 
             Обязательная переменная конструктора.
@@ -404,6 +552,26 @@
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.Profile">
+            <summary>
+            UserControl, предоставляющий данные профиля пользователя
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Profile.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Profile.hideLogin_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки hideLogin. Скрывает логин пользователя
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Profile.hidePassword_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки hidepassword. Скрывает пароль пользователя
             </summary>
         </member>
         <member name="F:Sport_assistent_n.Profile.components">
@@ -462,6 +630,27 @@
             содержимое этого метода с помощью редактора кода.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.Registration">
+            <summary>
+            UserControl, через который происходит регистрация клиентов
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Registration.SQL">
+            <summary>
+            Поле-коннектор. Через него происходит взаимодействие с БД
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Registration.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Registration.saveButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки saveButton и заносящий
+            данные о новом клиента в БД.
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.Registration.components">
             <summary> 
             Обязательная переменная конструктора.
@@ -477,6 +666,16 @@
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.Report">
+            <summary>
+            UserControl, в котором отображаются отчёты о посещаемости центра
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Report.#ctor">
+            <summary>
+            Конструктор
             </summary>
         </member>
         <member name="F:Sport_assistent_n.Report.components">
@@ -496,6 +695,16 @@
             содержимое этого метода с помощью редактора кода.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.Sales">
+            <summary>
+            UserControl, который содержит информацию о продаже абонементов
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Sales.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.Sales.components">
             <summary> 
             Обязательная переменная конструктора.
@@ -511,6 +720,42 @@
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.Subscription">
+            <summary>
+            UserControl, который позволяет просматривать информацию о имеющихся абонементах
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Subscription.abonements">
+            <summary>
+            Таблица с данными об абонементах
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Subscription.section">
+            <summary>
+            Таблица с данными о секциях
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Subscription.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Subscription.ExLoad">
+            <summary>
+            Подготавливает таблицу dataGridView1 к отображению данных.
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Subscription.DataGridViewSubscriptions_CellFormatting(System.Object,System.Windows.Forms.DataGridViewCellFormattingEventArgs)">
+            <summary>
+            Обновляет данные в таблице абонементов
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Subscription.newSubscription_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, выполняющийся при нажатии кнопки newSubscription. Запускает 
+            процесс оформления нового абонемента (пока в процессе разработки)
             </summary>
         </member>
         <member name="F:Sport_assistent_n.Subscription.components">
@@ -530,6 +775,16 @@
             содержимое этого метода с помощью редактора кода.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.Timetable">
+            <summary>
+            UserControl, позволяющий просматривать рассписание клиента
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Timetable.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.Timetable.components">
             <summary> 
             Обязательная переменная конструктора.
@@ -545,6 +800,57 @@
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.Trainer">
+            <summary>
+            UserControl, содержащий в себе весь функционал и всю информацию,
+            необходимые для работы тренера
+            </summary>
+        </member>
+        <member name="P:Sport_assistent_n.Trainer.DataControls">
+            <summary>
+            Поле-массив, которое хранит ссылки на UserControl-ы - разделы 
+            тренера.Он необходим для использования метода VisualEffects.HideControls.
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Trainer.userdata">
+            <summary>
+            Таблица для загрузки данных из БД
+            </summary>
+        </member>
+        <member name="F:Sport_assistent_n.Trainer.querySQL">
+            <summary>
+            Поле-коннектор. Через него происходит взаимодействие с БД
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Trainer.#ctor(System.Data.DataTable)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="table"></param>
+        </member>
+        <member name="M:Sport_assistent_n.Trainer.DataPreparation">
+            <summary>
+            Метод, предназначенный для загрузки данных о пользователи
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Trainer.profilButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, вызывающийся при нажатии кнопки profileButton и
+            открывающий профиль тренера
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Trainer.timetableButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, вызывающийся при нажатии кнопки timetableButton и
+            открывающий раздел с расписанием тренировок
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Trainer.notificationButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, вызывающийся при нажатии кнопки notificationButton и
+            открывающий раздел с уведомлениями
             </summary>
         </member>
         <member name="F:Sport_assistent_n.Trainer.components">
@@ -564,6 +870,17 @@
             содержимое этого метода с помощью редактора кода.
             </summary>
         </member>
+        <member name="T:Sport_assistent_n.TrainerTimetable">
+             <summary>
+             UserControl, который позволяет просматривать расписание
+            конкретного тренера.
+             </summary>
+        </member>
+        <member name="M:Sport_assistent_n.TrainerTimetable.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
         <member name="F:Sport_assistent_n.TrainerTimetable.components">
             <summary> 
             Обязательная переменная конструктора.
@@ -579,6 +896,17 @@
             <summary> 
             Требуемый метод для поддержки конструктора — не изменяйте 
             содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:Sport_assistent_n.User">
+            <summary>
+            Исходный UserControl, который наследуется всеми контролами пользователей
+            Client, Accountent и т.д.)
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.User.#ctor">
+            <summary>
+            Конструктор
             </summary>
         </member>
         <member name="F:Sport_assistent_n.User.components">
@@ -639,8 +967,20 @@
         </member>
         <member name="M:Sport_assistent_n.Client.subscriptionButton_Click(System.Object,System.EventArgs)">
             <summary>
-            Метод, запускающийся при нажатии кнопки  и открывающий
-            раздел учёта продаж абонементов
+            Метод, запускающийся при нажатии кнопки subscriptionButton и открывающий
+            раздел абонементов
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Client.timeTableButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки timeTableButton и открывающий
+            раздел расписания
+            </summary>
+        </member>
+        <member name="M:Sport_assistent_n.Client.notificationButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Метод, запускающийся при нажатии кнопки notificationButton и открывающий
+            раздел уведомлений
             </summary>
         </member>
         <member name="F:Sport_assistent_n.Client.components">
@@ -674,9 +1014,9 @@
             <summary>
             Свойство, контролирующее поле actualForm
             </summary>
-            <param name="value">
+            <params name="value">
             Новая форма, с которой будет работать приложение
-            </param>
+            </params>
             <returns> 
             Текущая рабочая форма
             </returns>
