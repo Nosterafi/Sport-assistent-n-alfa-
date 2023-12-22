@@ -1,0 +1,145 @@
+{
+  "source_base_path": "D:/Sport assistent n от 15.12.2023/Sport assistent n от 13.12.2023 21_00/Sport assistent n",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/Background Image v.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/Background Image v.1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/free-icon-at-2089136.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/free-icon-at-2089136.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/free-icon-avatar-126486.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/free-icon-avatar-126486.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/free-icon-exit-1286853.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/free-icon-exit-1286853.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/free-icon-lock-5525365.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/free-icon-lock-5525365.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/sport-trenazhernii_zal-tyazhelaya_atletika-diski-137320 new.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "Images/sport-trenazhernii_zal-tyazhelaya_atletika-diski-137320 new.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/sport-trenazhernii_zal-tyazhelaya_atletika-diski-137320.jpeg",
+      "output": {
+        "resource": {
+          "relative_path": "Images/sport-trenazhernii_zal-tyazhelaya_atletika-diski-137320.jpeg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
